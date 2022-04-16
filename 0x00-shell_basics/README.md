@@ -1,2 +1,2 @@
-Task 0 0. Where am I?
+Task 0. Where am I?
 0-current_working_directory
