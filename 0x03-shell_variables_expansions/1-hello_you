@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "hello $LINUX_ADMIN@ADMIN"
+echo "hello MyUser"
