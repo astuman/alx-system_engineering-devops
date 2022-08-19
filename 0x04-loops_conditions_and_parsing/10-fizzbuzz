@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# displays numbers from 1 to 100.
+# Displays numbers from 1 to 100.
 
 COUNTER=1
 while [ $COUNTER -lt 101 ]
