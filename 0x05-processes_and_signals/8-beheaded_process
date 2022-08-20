@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Terminat '7-highlander
-pkill -SIGNKILL -f "7-highlander"
+
+pkill -SIGKILL -f "7-highlander"
