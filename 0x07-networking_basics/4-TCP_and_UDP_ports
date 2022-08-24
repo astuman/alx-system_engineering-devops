@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Dsipalying listening ports and the PID name of the program
+netstat -lp
