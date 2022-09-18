@@ -1,0 +1,26 @@
+imgur-link  https://imgur.com/a/nTvQter
+
+image name 1-simple_web_stack.jpg
+
+
+
+1. For every additional element, why you are adding it
+-> I am adding load balancer that is used to balance workload over the network while multiple request is happend.
+2. What distribution algorithm your load balancer is configured with and how it works
+-> HAproxiy Load balancer is configured with round robin algorithm. Round-robin load balancing is the simplest and most commonly-used load balancing algorithm. Client requests are distributed to application servers in simple rotation. For example, if you have three application servers: the first client request is sent to the first application server in the list, the second client request to the second application server, the third client request to the third application server, the fourth to the first application server, and so on.
+3. Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both
+-> HAproxy Load-Balancer is used Active-Passive configuration rathe than Active-Active configuration.
+-> An active-active configuration is typically made up of at least two nodes, both actively running the same kind of service simultaneously.  Load balancing distributes workloads across all nodes in order to prevent any single node from getting overloaded. 
+-> Like the active-active configuration, an active-passive cluster also consists of at least two nodes. However, as the name "active-passive" implies, not all nodes are going to be active. In the case of two nodes, for example, if the first node is already active, the second node must be passive or on standby.
+-> The passive (failover) server serves as a backup that's ready to take over as soon as the active (primary) server gets disconnected or is unable to serve, an active-passive failover for when a node fails.
+4. How a database Primary-Replica (Master-Slave) cluster works
+-> Master-slave replication enables data from one database server (master) to be replicated to one or more other database servers (the slaves). 
+5. What is the difference between the Primary node and the Replica node in regard to the application
+-> The Primary node is responsible for all the write operations the site needs whilst the Replica node is capable of processing read operations, which decreases the read traffic to the Primary node.
+6. Where are SPOF
+-> If the Primary database server is down, the site would be unable to make changes to the site . The server containing the load balancer and the application server connecting to the primary database server are also SPOFs.
+7. Security issues
+-> The data transmitted over the network is not encrypted so hackers may spy it.
+-> And also there is no mechanism of preventing unauthorized access over the server since there is no firewall implemented.
+8. No monitoring
+-> In this web infrastructure we cannot know status of the server since we are not implement any method of monitoring.
