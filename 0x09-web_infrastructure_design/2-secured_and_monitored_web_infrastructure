@@ -1,0 +1,26 @@
+imgur link [https://imgur.com/n8Bn65K]
+
+image name 2-secured_and_monitored_web_infrastructure.jpg
+
+
+1. For every additional element, why you are adding it
+-> 3 firewalls are added to increase network security
+-> OneSSL stands for Secure Sockets Layer, a security protocol that creates an encrypted link between a web server and a web browser.
+-> Three Monitoring clients check health and performance of all of hosts, services, containers, and resources.
+2. What are firwalls for
+-> The firewalls are for protecting the network (web servers, anyway) from unwanted and unauthorized users by acting as an intermediary between the internal network and the external network and blocking the incoming traffic matching the aforementioned criteria.
+3. Why is the traffic served over HTTPS
+-> A site served over https is more secure. Since https uses the secure port 443, which encrypts outgoing information, it is much more difficult for people to spy on your site's information
+4. What monitoring is used for
+-> The monitoring clients are for monitoring the servers and the external network. They analyse the performance and operations of the servers, measure the overall health, and alert the administrators if the servers are not performing as expected
+5. How the monitoring tool is collecting data
+-> The monitoring tool observes the servers and provides key metrics about the servers' operations to the administrators. It automatically tests the accessibility of the servers, measures response time, and alerts for errors such as corrupt/missing files, security vulnerabilities/violations, and many other issues.
+6. Explain what to do if you want to monitor your web server QPS
+-> Get visibility into your entire infrastructure, from on-premises, to cloud resources, and cloud-native. Then connect the health and performance of all of your hosts, services, containers, and resources with the richest application context, logs, and configuration changes.
+Explain what the issues are with this infrastructure
+7. Why terminating SSL at the load balancer level is an issue
+-> Terminating SSL at the load balancer level would leave the traffic between the load balancer and the web servers unencrypted.
+8. Why having only one MySQL server capable of accepting writes is an issue
+-> Having one MySQL server is an issue because it is not scalable and can act as a single point of failure for the web infrastructure.
+9. Why having servers with all the same components (database, web server and application server) might be a problem
+-> Having servers with all the same components would make the components contend for resources on the server like CPU, Memory, I/O, etc., which can lead to poor performance and also make it difficult to locate the source of the problem. A setup such as this is not easily scalable.
