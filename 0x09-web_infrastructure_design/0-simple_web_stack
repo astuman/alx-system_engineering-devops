@@ -1,0 +1,24 @@
+1. What is a server
+-> A server is simply a computer which is accessible by clients only on the network. This kind of server is called client-server-model.
+2. What is the role of the domain name 
+-> Domain name is used to assign an IP address which is very large for human to remember.
+-> So DNS serves this work and make easy by remembering the only assigned readable name.
+3. What type of DNS record www is in www.foobar.com
+-> www.foobar.com is "A record" type of DNS which point to the main domain name of Ip address.
+4. What is the role of the web server 
+-> A web server is a software or hardware that accepts http or secure http request and returns http respond as the content of the resource.
+5. What is the role of the application server
+-> To install, operate and host applications
+-> Distributing and monitoring software updates 
+-> Processing data sent from another web server
+6. What is the role of database
+-> The role of the database in this website infrastructure is used to store, manipulate and remove data
+7. What is the server using to communicate with the computer of the user requesting the website
+-> The communication between computers is occur on the internet through TCP/IP protocol
+8 The issue on this infrastructure
+-> Amonge many SPOF(Single Point of Failure) that may happen, there may be failerity of database server.
+9. Downtime when maintenance needed (like deploying new code web server needs to be restarted)
+-> Check all components of the infrastructure, check that may be power case(turned off) of the server
+10. Cannot scale if too much incoming traffic
+-> It is hard to scale if there is too much incoming traffic becuase one server contains all components of infrastructure 
+
