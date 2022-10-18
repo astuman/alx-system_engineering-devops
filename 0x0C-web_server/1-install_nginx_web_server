@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# install Nginx server and configure
+
+apt-get -y update
+apt-get -y install nginx
+ufw "Nginx HTTP"
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+service nginx start
