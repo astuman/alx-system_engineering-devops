@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # configures an Nginx server to have a custom 404 page that contains the string 'Ceci n'est pas une page'
-sudo apt update
-sudo apt install nginx -y
-sudo ufw allow 22
-sudo ufw allow 80
-sudo ufw enable
-sudo echo "Hello World!" > /var/www/html/index.nginx-debian.html
-sudo echo "Ceci n'est pas une page" > sudo /usr/share/nginx/html/custom_404.html
-sudo sed -i "/listen 80 default_server/a \\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 301 Moved Permanently;" /etc/nginx/sites-available/default
-sudo sed -i "/listen 80 default_server/a \\\terror_page 404 /custom_404.html; location = /custom_404.html {root /usr/share/nginx/html;\n\tinternal;}" /etc/nginx/sites-available/default
-sudo service nginx restart
+apt update
+apt install nginx -y
+ufw allow 22
+ufw allow 80
+ufw enable
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > sudo /usr/share/nginx/html/custom_404.html
+sed -i "/listen 80 default_server/a \\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 301 Moved Permanently;" /etc/nginx/sites-available/default
+sed -i "/listen 80 default_server/a \\\terror_page 404 /custom_404.html; location = /custom_404.html {root /usr/share/nginx/html;\n\tinternal;}" /etc/nginx/sites-available/default
+service nginx restart
