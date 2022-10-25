@@ -11,9 +11,10 @@ file_line { 'aaaaa':
 }
 
 file { '/var/www/html/index.html':
-  content => 'Hello WOrld!',
+  content => 'Hello World!',
 }
 
 service { 'nginx':
   ensure  => running,
   require => Package['nginx'],
+}
