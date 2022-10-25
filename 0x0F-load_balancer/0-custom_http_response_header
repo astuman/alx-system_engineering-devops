@@ -12,4 +12,3 @@ sed -i "s/listen 80 default_server;/$new_string/" /etc/nginx/sites-enabled/defau
 new_string2="http {\\n\\tadd_header X-Served-By \"$hostname\";"
 sed -i "s/http {/$new_string2/" /etc/nginx/nginx.conf
 service nginx start
-
