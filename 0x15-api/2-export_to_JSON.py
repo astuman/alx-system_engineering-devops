@@ -1,29 +1,30 @@
 #!/usr/bin/python3
-"""Python script with a given employee ID,
-returns information about his/her TODO list progress. """
-
+"""Export data from an API to JSON format.
+"""
 from json import dumps
 import requests
 from sys import argv
 
 if __name__ == '__main__':
+    # Checks if the argument can be converted to a number
     try:
         emp_id = int(argv[1])
-
     except ValueError:
         exit()
+
+    # Main formatted names to API uris and filenames
     api_url = 'https://jsonplaceholder.typicode.com'
     user_uri = '{api}/users/{id}'.format(api=api_url, id=emp_id)
     todo_uri = '{user_uri}/todos'.format(user_uri=user_uri)
     filename = '{emp_id}.json'.format(emp_id=emp_id)
 
-    # user response
-    u_res = requests.get(todo_uri).json()
+    # User Response
+    u_res = requests.get(user_uri).json()
 
-    # user todo response
+    # User TODO Response
     t_res = requests.get(todo_uri).json()
 
-    # all tasks
+    # all tasks of an user
     user_tasks = list()
 
     for elem in t_res:
@@ -33,6 +34,7 @@ if __name__ == '__main__':
             'username': u_res.get('username')
         }
         user_tasks.append(data)
-    # create new file to save user information
-    with open(filename, 'w', encoding='utf-8') as f:
-        f.write(dumps({emp_id: user_tasks}))
+
+    # Create the new file to save the information
+    with open(filename, 'w', encoding='utf-8') as jsonfile:
+        jsonfile.write(dumps({emp_id: user_tasks}))
