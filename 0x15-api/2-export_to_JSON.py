@@ -15,7 +15,7 @@ if __name__ == '__main__':
     api_url = 'https://jsonplaceholder.typicode.com'
     user_uri = '{api}/users/{id}'.format(api=api_url, id=emp_id)
     todo_uri = '{user_uri}/todos'.format(user_uri=user_uri)
-    filename = '{emp_id}.csv'.format(emp_id=emp_id)
+    filename = '{emp_id}.json'.format(emp_id=emp_id)
 
     # user response
     u_res = requests.get(todo_uri).json()
