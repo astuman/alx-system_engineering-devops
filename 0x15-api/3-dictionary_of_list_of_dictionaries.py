@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-"""Export data from an API to JSON format.
-"""
+"""Export data from an API to JSON """
 from json import dumps
 import requests
 
 
 def get_tasks_from_employee(response, employee):
-    """Get all the tasks of an employee
+    """Get tasks of an employee
     """
     # Creates a list to stores all the tasks of the employee
     employee_tasks = list()
