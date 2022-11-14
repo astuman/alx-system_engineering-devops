@@ -23,18 +23,19 @@ if __name__ == '__main__':
 
     # todo response from user
     res = requests.get(todo_uri).json()
-    
+
     # total number of tasks
     total = len(res)
 
     # No. no completed tasks
     non_completed = sum([elem['completed'] is False for elem in res])
-    
+
     # No. completed
     completed = total - non_completed
 
     # formatting output
     str = "Employee {emp_name} is done with tasks({completed}/{total}):"
+
     print(str.format(emp_name=name, completed=completed, total=total))
 
     # completed tasks
